@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: .
+    ports:
+      - "80:5173" # Прокидываем порт на ваш компьютер (localhost:5173)
+    volumes:
+      - .:/app # Монтируем папку с кодом, чтобы работала горячая перезагрузка (Hot Reload)
+      - /app/node_modules # Защищаем node_modules внутри контейнера
+    environment:
+      - WATCHPACK_POLLING=true # Помогает адекватно отслеживать изменения файлов на Windows/macOS

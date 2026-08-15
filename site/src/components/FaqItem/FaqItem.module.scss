@@ -1,0 +1,114 @@
+.faqItem {
+    border-bottom: 1px solid #e2e8f0;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    /* 🔴 ГЛАВНЫЙ ФИКС: Класс состояния теперь привязан жестко к родителю */
+    &.open {
+
+        /* Знак ">" очень важен: он говорит открывать ТОЛЬКО текущий вопрос, 
+       а не все вложенные подвопросы внутри него */
+        >.questionBtn .icon {
+            transform: rotate(135deg);
+        }
+
+        >.answerWrapper {
+            grid-template-rows: 1fr;
+        }
+    }
+}
+
+.questionBtn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    color: #1e293b;
+    font-size: 1.125rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #3b82f6;
+    }
+}
+
+.nestedBtn {
+    padding: 1rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #334155;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #3b82f6;
+    flex-shrink: 0;
+    margin-left: 1rem;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* МАГИЯ АНИМАЦИИ */
+.answerWrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.answerContent {
+    overflow: hidden;
+    min-height: 0;
+    /* 🔴 ВТОРОЙ ФИКС: Обязательно для работы grid 0fr в Safari/Chrome */
+}
+
+/* Внутренние стили */
+.text {
+    padding-bottom: 1rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.videoContainer {
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    // box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+    video {
+        width: 100%;
+        display: block;
+        max-height: 400px;
+        object-fit: cover;
+    }
+}
+
+/* КОНТЕЙНЕР ДЛЯ ВЛОЖЕННЫХ ВОПРОСОВ */
+.nestedContainer {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid #e2e8f0;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+
+    >div:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}

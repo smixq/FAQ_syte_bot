@@ -1,0 +1,22 @@
+.faqSection {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #0f172a;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.container {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    border: 1px solid #f1f5f9;
+}

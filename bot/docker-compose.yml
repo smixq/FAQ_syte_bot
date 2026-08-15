@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  faq_bot:
+    build: .
+    container_name: tg_faq_bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      # Пробрасываем папку data из контейнера на хост-машину
+      # Теперь база данных faq.db будет физически лежать в папке ./data рядом с docker-compose.yml
+      - ./data:/app/data
