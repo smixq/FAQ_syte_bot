@@ -7,5 +7,18 @@ export default defineConfig({
   server: {
     host: true, // разрешает подключение из Docker
     port: 5173,
+    hmr: {
+      host: 'faq4admin.ru',
+      protocol: 'wss',
+      clientPort: 443, // Обязательно, если сайт работает по HTTPS
+    },
+    allowedHosts: ['faq4admin.ru'],
   },
 })
+
+
+
+
+
+
+
