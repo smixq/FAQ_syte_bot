@@ -1,0 +1,92 @@
+.navContainer {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @media (max-width: 480px) {
+        top: 12px;
+        left: 12px;
+        gap: 8px;
+    }
+}
+
+.navBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 12px;
+
+    /* Эффект матового стекла (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+
+    color: #1a1a1e;
+    font-size: 13px;
+    // font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+    svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        transition: transform 0.2s ease;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+
+        svg {
+            transform: scale(1.1);
+        }
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+}
+
+.telegramBtn {
+    &:hover {
+        color: #0088cc;
+    }
+}
+
+.webBtn {
+    &:hover {
+        color: #2563eb;
+    }
+}
+
+/* Автоматическая адаптация под тёмную тему, если на сайте используется dark mode */
+@media (prefers-color-scheme: dark) {
+    .navBtn {
+        background: rgba(22, 22, 26, 0.75);
+        border-color: rgba(255, 255, 255, 0.1);
+        color: #ececec;
+
+        &:hover {
+            background: rgba(30, 30, 36, 0.92);
+        }
+    }
+
+    .telegramBtn:hover {
+        color: #38bdf8;
+    }
+
+    .webBtn:hover {
+        color: #60a5fa;
+    }
+}

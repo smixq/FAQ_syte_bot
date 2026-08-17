@@ -79,10 +79,12 @@
 
 /* Внутренние стили */
 .text {
+
     padding-bottom: 1rem;
     color: #64748b;
-    line-height: 1.6;
+    line-height: 1;
     margin: 0;
+    white-space: pre-wrap;
 }
 
 .videoContainer {
@@ -111,4 +113,48 @@
         border-bottom: none;
         padding-bottom: 0;
     }
+}
+
+/* --- АККУРАТНОЕ ВЫДЕЛЕНИЕ ВАЖНОГО ВОПРОСА --- */
+
+.important {
+    /* Оставляем стандартную нижнюю границу списка */
+
+    >.questionBtn {
+        /* Текст важного вопроса делаем темно-синим (или другим акцентным цветом вашего дизайна) */
+        color: #2563eb;
+
+        .icon {
+            /* Иконка плюсика тоже получает акцентный цвет */
+            color: #2563eb;
+        }
+
+        &:hover {
+            color: #1d4ed8;
+        }
+    }
+}
+
+/* Минималистичная плашка "Важно" */
+.badge {
+    display: inline-block;
+    background-color: #fee2e2;
+    /* Очень бледный красный фон */
+    color: #ef4444;
+    /* Красный текст */
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+/* Выравнивание текста и плашки */
+.questionText {
+    display: flex;
+    /* Изменили на flex для идеального выравнивания по вертикали */
+    align-items: center;
 }
