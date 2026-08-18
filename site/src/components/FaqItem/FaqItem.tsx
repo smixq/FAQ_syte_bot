@@ -59,19 +59,23 @@ export const FaqItem = ({ item, level = 0, parentIsOpen = true }: FaqItemProps) 
 
             <div className={styles.answerWrapper} ref={contentRef}>
                 <div className={styles.answerContent}>
-                    {/* Выводим развернутый title внутри блока, если он отличается от question */}
-                    {showHeaderTitle && <h4 className={styles.itemTitle}>{item.title}</h4>}
+                    {/* Рендерим title как HTML и принудительно задаем черный цвет */}
+                    {showHeaderTitle && (
+                        <p
+                            className={styles.itemTitle}
+                            style={{ color: '#000' }} // <-- Добавлен черный цвет
+                            dangerouslySetInnerHTML={{ __html: item.title! }}
+                        />
+                    )}
 
-                    {/* Поддержка переносов строк \n в тексте ответа */}
+                    {/* Рендерим answer как HTML, предварительно заменяя \n на <br/> */}
                     {item.answer && (
-                        <p className={styles.text}>
-                            {item.answer.split('\n').map((line, index) => (
-                                <span key={index}>
-                                    {line}
-                                    <br />
-                                </span>
-                            ))}
-                        </p>
+                        <p
+                            className={styles.text}
+                            dangerouslySetInnerHTML={{
+                                __html: item.answer.replace(/\n/g, '<br />')
+                            }}
+                        />
                     )}
 
                     {item.videoUrl && (
