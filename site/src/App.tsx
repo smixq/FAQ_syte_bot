@@ -7,8 +7,8 @@ function App() {
   return (
     <main className="main-layout">
       <HeaderLinks
-        telegramUrl="@bizarrebotgod_bot"
-        webAppUrl="https://superbot.bizarreclub.ru/"
+        telegramUrl="https://t.me/bizarrebotgod_bot"
+        webAppUrl="https://superbot.bizarreclub.ru"
       />
       <FaqList data={faqData} />
 

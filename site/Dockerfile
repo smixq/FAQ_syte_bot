@@ -1,18 +1,16 @@
-# 1. Используем легкий образ с Node.js
-FROM node:20-alpine
-
-# 2. Рабочая папка внутри контейнера
+# ЭТАП 1: Сборка статики
+FROM node:20-alpine AS builder
 WORKDIR /app
-
-# 3. Копируем файлы зависимостей и устанавливаем их
 COPY package*.json ./
-RUN npm install
-
-# 4. Копируем весь остальной код
+RUN npm ci
 COPY . .
+# Собираем БЕЗ флагов --host
+RUN npm run build
 
-# 5. Открываем порт (5173 для Vite или 3000 для Create React App)
-EXPOSE 5173
+# ЭТАП 2: Раздача через Nginx
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# 6. Запускаем dev-сервер (флаг --host нужен, чтобы Vite принимал подключения снаружи контейнера)
-CMD ["npm", "run", "dev", "--", "--host"]
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

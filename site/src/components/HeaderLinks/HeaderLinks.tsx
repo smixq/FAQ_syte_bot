@@ -7,8 +7,8 @@ interface HeaderLinksProps {
 }
 
 export const HeaderLinks: React.FC<HeaderLinksProps> = ({
-    telegramUrl = 'https://t.me/your_bot',
-    webAppUrl = 'https://your-domain.ru',
+    telegramUrl = 'https://t.me/bizarrebotgod_bot',
+    webAppUrl = 'https://superbot.bizarreclub.ru',
 }) => {
     return (
         <div className={styles.navContainer}>
