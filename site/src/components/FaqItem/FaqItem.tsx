@@ -33,9 +33,11 @@ export const FaqItem = ({ item, level = 0, parentIsOpen = true }: FaqItemProps) 
         }
     }, [isOpen]);
 
+    // Проверяем, отличается ли заголовок от краткого вопроса
+    const showHeaderTitle = item.title && item.title !== item.question;
+
     return (
         <div
-            // 👇 Добавили проверку на item.isImportant
             className={`${styles.faqItem} ${isOpen ? styles.open : ''} ${item.isImportant ? styles.important : ''}`}
             style={{ '--level': level } as React.CSSProperties}
         >
@@ -45,7 +47,6 @@ export const FaqItem = ({ item, level = 0, parentIsOpen = true }: FaqItemProps) 
                 aria-expanded={isOpen}
             >
                 <span className={styles.questionText}>
-                    {/* 👇 Выводим бейдж, если вопрос важный */}
                     {item.isImportant && <span className={styles.badge}>Важно</span>}
                     {item.question}
                 </span>
@@ -58,8 +59,11 @@ export const FaqItem = ({ item, level = 0, parentIsOpen = true }: FaqItemProps) 
 
             <div className={styles.answerWrapper} ref={contentRef}>
                 <div className={styles.answerContent}>
-                    {item.answer && <p className={styles.text}>{item.answer}</p>}
-                    {/* {item.answer && (
+                    {/* Выводим развернутый title внутри блока, если он отличается от question */}
+                    {showHeaderTitle && <h4 className={styles.itemTitle}>{item.title}</h4>}
+
+                    {/* Поддержка переносов строк \n в тексте ответа */}
+                    {item.answer && (
                         <p className={styles.text}>
                             {item.answer.split('\n').map((line, index) => (
                                 <span key={index}>
@@ -68,7 +72,7 @@ export const FaqItem = ({ item, level = 0, parentIsOpen = true }: FaqItemProps) 
                                 </span>
                             ))}
                         </p>
-                    )} */}
+                    )}
 
                     {item.videoUrl && (
                         <div className={styles.videoContainer}>
@@ -86,9 +90,9 @@ export const FaqItem = ({ item, level = 0, parentIsOpen = true }: FaqItemProps) 
 
                     {hasChildren && (
                         <div className={styles.nestedContainer}>
-                            {item.children!.map((child, index) => (
+                            {item.children!.map((child) => (
                                 <FaqItem
-                                    key={index}
+                                    key={child.id}
                                     item={child}
                                     level={level + 1}
                                     parentIsOpen={isOpen}
