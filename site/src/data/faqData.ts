@@ -13,7 +13,7 @@ export const faqData: IFaq[] = [
     {
         id: '1',
         question: 'Как пользоваться Telegram-ботом',
-        title: 'Как пользоваться Telegram-ботом: @bizarrebotgod_bot',
+        title: 'Как пользоваться Telegram-ботом: https://t.me/bizarrebotgod_bot',
         answer: 'Смотрите краткий видео-обзор:',
         isImportant: true,
         telegramPost: 'tutor4admin/7',
@@ -39,8 +39,8 @@ export const faqData: IFaq[] = [
                     {
                         id: '3.1.1',
                         question: 'Через Telegram-бот',
-                        title: 'Проверка статуса пользователя через Telegram-бот: @bizarrebotgod_bot',
-                        answer: `Проверить статус в боте:\n\nЗапустите бота: @bizarrebotgod_bot - Нажмите [Проверить статус] - [введите @ username | Имя | телеграм ID]\n\nВы увидите:\n\n🔎 Статус: в бане / не заблокирован\n👤 Профиль: имя и @username\n🆔 Telegram ID\n💬 Чаты пользователя\n🚫 Причина бана\n👮 Кто забанил\n📅 Дата и время бана\n📋 История банов и разбанов`,
+                        title: 'Проверка статуса пользователя через Telegram-бот: https://t.me/bizarrebotgod_bot',
+                        answer: `Проверить статус в боте:\n\nЗапустите бота: https://t.me/bizarrebotgod_bot - Нажмите [Проверить статус] - [введите @ username | Имя | телеграм ID]\n\nВы увидите:\n\n🔎 Статус: в бане / не заблокирован\n👤 Профиль: имя и @username\n🆔 Telegram ID\n💬 Чаты пользователя\n🚫 Причина бана\n👮 Кто забанил\n📅 Дата и время бана\n📋 История банов и разбанов`,
                     },
                     {
                         id: '3.1.2',
@@ -59,8 +59,8 @@ export const faqData: IFaq[] = [
                     {
                         id: '3.2.1',
                         question: 'Через Telegram-бот',
-                        title: 'Поиск по истории сообщений через Telegram-бот: @bizarrebotgod_bot',
-                        answer: `Запустите бота: @bizarrebotgod_bot - Нажмите [Последние 30 сообщений во всех чатах]\n\nВы увидите сообщения / фото / стикеры в чате`,
+                        title: 'Поиск по истории сообщений через Telegram-бот: https://t.me/bizarrebotgod_bot',
+                        answer: `Запустите бота: https://t.me/bizarrebotgod_bot - Нажмите [Последние 30 сообщений во всех чатах]\n\nВы увидите сообщения / фото / стикеры в чате`,
                     },
                     {
                         id: '3.2.2',
@@ -107,7 +107,7 @@ export const faqData: IFaq[] = [
                     {
                         id: '3.4.1',
                         question: 'Через Telegram-бот',
-                        title: 'Поиск по стоп-словам через Telegram-бот: @bizarrebotgod_bot',
+                        title: 'Поиск по стоп-словам через Telegram-бот: https://t.me/bizarrebotgod_bot',
                         answer: 'Видео инструкция:',
                         telegramPost: 'tutor4admin/30',
                     },
@@ -137,33 +137,33 @@ export const faqData: IFaq[] = [
             {
                 id: '4.1',
                 question: 'Забанить через Telegram-бот',
-                title: 'Способы бана через Telegram-бот: @bizarrebotgod_bot',
+                title: 'Способы бана через Telegram-бот: https://t.me/bizarrebotgod_bot',
                 children: [
                     {
                         id: '4.1.1',
                         question: 'По Username',
-                        title: 'Как забанить пользователя по Username через Telegram-бот: @bizarrebotgod_bot',
+                        title: 'Как забанить пользователя по Username через Telegram-бот: https://t.me/bizarrebotgod_bot',
                         answer: 'Видео инструкция:',
                         telegramPost: 'tutor4admin/25',
                     },
                     {
                         id: '4.1.2',
                         question: 'По имени',
-                        title: 'Как забанить пользователя по Имени через Telegram-бот: @bizarrebotgod_bot',
+                        title: 'Как забанить пользователя по Имени через Telegram-бот: https://t.me/bizarrebotgod_bot',
                         answer: 'Видео инструкция:',
                         telegramPost: 'tutor4admin/26',
                     },
                     {
                         id: '4.1.3',
                         question: 'По Telegram ID',
-                        title: 'Как забанить пользователя по Telegram ID через Telegram-бот: @bizarrebotgod_bot',
-                        answer: `Работа в Боте\n\nЗабанить по телеграмм ID доступна:\n\nЗапустите бот @bizarrebotgod_bot - Нажмите [Забанить] - [введите ID] - [Укажите причину] - [Прикрепите скрин] - Происходит бан✅\n\n❗️Однако выяснить ID пользователя напрямую нельзя, нужен компьютер`,
+                        title: 'Как забанить пользователя по Telegram ID через Telegram-бот: https://t.me/bizarrebotgod_bot',
+                        answer: `Работа в Боте\n\nЗабанить по телеграмм ID доступна:\n\nЗапустите бот https://t.me/bizarrebotgod_bot - Нажмите [Забанить] - [введите ID] - [Укажите причину] - [Прикрепите скрин] - Происходит бан✅\n\n❗️Однако выяснить ID пользователя напрямую нельзя, нужен компьютер`,
                         // telegramPost: 'tutor4admin/28',
                     },
                     {
                         id: '4.1.4',
                         question: 'По сообщению из чата',
-                        title: 'Как забанить пользователя по сообщению из чата через Telegram-бот: @bizarrebotgod_bot',
+                        title: 'Как забанить пользователя по сообщению из чата через Telegram-бот: https://t.me/bizarrebotgod_bot',
                         answer: 'Видео инструкция:',
                         telegramPost: 'tutor4admin/35',
                     },
@@ -223,7 +223,7 @@ export const faqData: IFaq[] = [
             {
                 id: '5.1',
                 question: 'Разбанить через Telegram-бот',
-                title: 'Как разбанить пользователя через Telegram-бот: @bizarrebotgod_bot',
+                title: 'Как разбанить пользователя через Telegram-бот: https://t.me/bizarrebotgod_bot',
                 answer: `Разбанить в боте:\n\nЗапустите бота - Нажмите [Разбанить] - [введите @ username | Имя | телеграм ID]`,
             },
             {
